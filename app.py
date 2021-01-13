@@ -75,11 +75,11 @@ def respond():
            # if things went wrong
            bot.sendMessage(chat_id=chat_id, text="There was a problem, please try again.", reply_to_message_id=msg_id)
     
-    else:
-        text = "Invalid input. Send a message saying 'news' to receive latest headlines."
-        bot.sendChatAction(chat_id=chat_id, action="typing")
-        sleep(2)
-        bot.sendMessage(chat_id=chat_id, text = news, reply_to_message_id=msg_id)
+   else:
+       text = "Invalid input. Send a message saying 'news' to receive latest headlines."
+       bot.sendChatAction(chat_id=chat_id, action="typing")
+       sleep(2)
+       bot.sendMessage(chat_id=chat_id, text = news, reply_to_message_id=msg_id)
 
    return 'ok'
 
