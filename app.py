@@ -19,6 +19,7 @@ def get_content():
     url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=bc06c2ceab2148698006caef89a4e111'
     response = requests.get(url).json()
     articles = response['articles']
+    return articles
 
 def format_content():
     articles = get_content()
@@ -29,9 +30,8 @@ def format_content():
         title=a['title']
         url=a['url']
         return_list.append('\n\nAgency: '+ str(source)+'\nAuthor :'+ str(author)+'\nTitle: '+title+'\n\nread here: '+str(url))
-
-    if len(return_list)>5:
-        return return_list[:5]
+        
+    return return_list[:5]
 
 
 #Bind function to route - telling flask what to do when a URL is called
