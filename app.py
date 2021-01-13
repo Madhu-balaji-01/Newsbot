@@ -16,9 +16,7 @@ app = Flask(__name__)
 
 #Function to access API 
 def get_content():
-    url = ('http://newsapi.org/v2/top-headlines?'
-        'country=us&'
-        'apiKey=bc06c2ceab2148698006caef89a4e111')
+    url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=bc06c2ceab2148698006caef89a4e111'
     response = requests.get(url).json()
     articles = response['article']
 
@@ -70,7 +68,7 @@ def respond():
            bot.sendChatAction(chat_id=chat_id, action="typing")
            sleep(4)
            # reply with the top 5 news articles
-           bot.sendMessage(chat_id=chat_id, text = news, reply_to_message_id=msg_id)
+           bot.sendMessage(chat_id=chat_id, text = " ".join(news), reply_to_message_id=msg_id)
        except Exception:
            # if things went wrong
            bot.sendMessage(chat_id=chat_id, text="There was a problem, please try again.", reply_to_message_id=msg_id)
