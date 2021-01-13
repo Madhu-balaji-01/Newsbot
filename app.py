@@ -78,8 +78,8 @@ def respond():
    else:
        text = "Invalid input. Send a message saying 'news' to receive latest headlines."
        bot.sendChatAction(chat_id=chat_id, action="typing")
-       sleep(2)
-       bot.sendMessage(chat_id=chat_id, text = news, reply_to_message_id=msg_id)
+       sleep(1.5)
+       bot.sendMessage(chat_id=chat_id, text =text, reply_to_message_id=msg_id)
 
    return 'ok'
 
