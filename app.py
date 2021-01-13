@@ -18,7 +18,7 @@ app = Flask(__name__)
 def get_content():
     url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=bc06c2ceab2148698006caef89a4e111'
     response = requests.get(url).json()
-    articles = response['article']
+    articles = response['articles']
 
 def format_content():
     articles = get_content()
@@ -28,7 +28,7 @@ def format_content():
         author=a['author']
         title=a['title']
         url=a['url']
-        return_list.append('\n\nAgency: '+str(source)+'\nAuthor :'+str(author)+'\nTitle: '+title+'\n\nread here: '+str(url))
+        return_list.append('\n\nAgency: '+ str(source)+'\nAuthor :'+ str(author)+'\nTitle: '+title+'\n\nread here: '+str(url))
 
     if len(return_list)>5:
         return return_list[:5]
