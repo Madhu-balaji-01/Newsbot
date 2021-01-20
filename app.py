@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 #Function to access API 
 def get_content():
-    url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=bc06c2ceab2148698006caef89a4e111'
+    url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=***************'
     response = requests.get(url).json()
     articles = response['articles']
     return articles
